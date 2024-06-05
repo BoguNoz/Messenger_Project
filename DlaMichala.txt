@@ -6,6 +6,6 @@ Jak potrzebujejsz coœ dodaæ do bazy poprostu zrób to rêcznie za pomoc¹ SQL serve
 
 W ka¿dym razie powodzonak ;)
 
-------
+---
 
 

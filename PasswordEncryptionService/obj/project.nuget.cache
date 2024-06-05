@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VfuwqSUdITJA7JsZZYQHqgGZuNTeQgPuLYkmY8Cz7PXKw+y3hD4T1aJZOwUAFkdjdoBeqZPJxTK0e56bmtJNPA==",
+  "dgSpecHash": "NaleU1OJGALCeSblnRhUIWxnsQXhcSER81rIjCBNV0W1HCDfqDQY4JVS6Qm2yJaTX1atf02VEDsO4TX7SMTdYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bnozd\\Desktop\\Messager_Project\\PasswordEncryptionService\\PasswordEncryptionService.csproj",
+  "projectFilePath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\PasswordEncryptionService\\PasswordEncryptionService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bnozd\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\bnozd\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
