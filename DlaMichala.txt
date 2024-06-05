@@ -1,0 +1,11 @@
+Micha³ zapoznaj siê na pocz¹tku z modelami (Messenger_Project.Model) bazy danych i jej rpozytoriami (Messenger_Project.Repositories), czy ci wszysko pasi
+Nie zapomnij o podpiêciu swojej bazy danych i zrobieniu migracji wrazie czego
+Przejrzyj czy podobaj¹ ci siê kolory emotek 
+Jak dodajesz coœ do bazy pamiêtaj by zachowaæ jednolitoœæ i dodawaj w tym sammym stylu co ja
+Jak potrzebujejsz coœ dodaæ do bazy poprostu zrób to rêcznie za pomoc¹ SQL server Object Explorer, nie ma co siê mêczyæ
+
+W ka¿dym razie powodzonak ;)
+
+----
+
+

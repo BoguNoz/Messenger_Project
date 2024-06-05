@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messager_Project", "Messager_Project\Messager_Project.csproj", "{A370ADDC-3C8D-4A81-999B-FA803A2E7AD0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{48421530-F753-4476-856A-BFA0B1525CF1} = {48421530-F753-4476-856A-BFA0B1525CF1}
+		{60958553-169A-4B50-AEC6-839E6706223F} = {60958553-169A-4B50-AEC6-839E6706223F}
+		{9452E5EA-60F5-436A-86B3-851E9D08B427} = {9452E5EA-60F5-436A-86B3-851E9D08B427}
+		{9DA2D696-148B-45D1-9247-02549E8FABC2} = {9DA2D696-148B-45D1-9247-02549E8FABC2}
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1} = {AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messager_Project.DTO", "Messager_Project.DTO\Messager_Project.DTO.csproj", "{48421530-F753-4476-856A-BFA0B1525CF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messager_Project.Model", "Messager_Project.Model\Messager_Project.Model.csproj", "{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DA2D696-148B-45D1-9247-02549E8FABC2} = {9DA2D696-148B-45D1-9247-02549E8FABC2}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Messager_Project.Repository", "Messager_Project.Repository\Messager_Project.Repository.csproj", "{9452E5EA-60F5-436A-86B3-851E9D08B427}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1} = {AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordEncryptionService", "PasswordEncryptionService\PasswordEncryptionService.csproj", "{9DA2D696-148B-45D1-9247-02549E8FABC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontIconService", "FontIconService\FontIconService.csproj", "{60958553-169A-4B50-AEC6-839E6706223F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoUsuniencia", "DoUsuniencia", "{64EB96F3-F450-4909-820F-5B35F031FD0E}"
+	ProjectSection(SolutionItems) = preProject
+		DlaMichala.txt = DlaMichala.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A370ADDC-3C8D-4A81-999B-FA803A2E7AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A370ADDC-3C8D-4A81-999B-FA803A2E7AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A370ADDC-3C8D-4A81-999B-FA803A2E7AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A370ADDC-3C8D-4A81-999B-FA803A2E7AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48421530-F753-4476-856A-BFA0B1525CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48421530-F753-4476-856A-BFA0B1525CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48421530-F753-4476-856A-BFA0B1525CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48421530-F753-4476-856A-BFA0B1525CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE64B78-F1E3-4B8B-83F0-A10479E8A5F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9452E5EA-60F5-436A-86B3-851E9D08B427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9452E5EA-60F5-436A-86B3-851E9D08B427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9452E5EA-60F5-436A-86B3-851E9D08B427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9452E5EA-60F5-436A-86B3-851E9D08B427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA2D696-148B-45D1-9247-02549E8FABC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA2D696-148B-45D1-9247-02549E8FABC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA2D696-148B-45D1-9247-02549E8FABC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA2D696-148B-45D1-9247-02549E8FABC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60958553-169A-4B50-AEC6-839E6706223F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60958553-169A-4B50-AEC6-839E6706223F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60958553-169A-4B50-AEC6-839E6706223F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60958553-169A-4B50-AEC6-839E6706223F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2781CCF0-942F-4669-AFDB-8532BC9BB4FA}
+	EndGlobalSection
+EndGlobal

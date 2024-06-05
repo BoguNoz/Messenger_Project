@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Messager_Project.props" />
+</Project>
