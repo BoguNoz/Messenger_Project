@@ -10,7 +10,8 @@
         "dependencies": {
           "Messager_Project.Model": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
-          "Microsoft.EntityFrameworkCore.Tools": "8.0.6"
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
+          "ResponseModelService": "1.0.0"
         },
         "runtime": {
           "Messager_Project.Repository.dll": {}
@@ -937,6 +938,11 @@
         "runtime": {
           "PasswordEncryptionService.dll": {}
         }
+      },
+      "ResponseModelService/1.0.0": {
+        "runtime": {
+          "ResponseModelService.dll": {}
+        }
       }
     }
   },
@@ -1484,6 +1490,11 @@
       "sha512": ""
     },
     "PasswordEncryptionService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ResponseModelService/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

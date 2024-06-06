@@ -1,6 +1,7 @@
 ﻿using Messager_Project.Model;
 using Messager_Project.Model.Enteties;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,10 +61,14 @@ namespace Messager_Project.Repository.UsersFriends
             return friends;
         }
 
-        public async Task<bool> SaveRelationAsync(UserFriends relation, User user1, User user2)
+        public async Task<ResponseModel<UserFriends>> SaveRelationAsync(UserFriends relation, User user1, User user2)
         {
-            if (relation == null || user1 == null || user2 == null)
-                return false;
+            if (relation == null)
+                return new ResponseModel<UserFriends> { Status = false, Message = "Relation is null", ReferenceObject = null };
+            if (user1 == null)
+                return new ResponseModel<UserFriends> { Status = false, Message = "User-1 is null", ReferenceObject = null };
+            if (user2 == null)
+                return new ResponseModel<UserFriends> { Status = false, Message = "User-2 is null", ReferenceObject = null };
 
             //Checking status
             DbContext.Entry(relation).State = relation.Relation_ID == default(int) ? EntityState.Added : EntityState.Modified;
@@ -74,21 +79,22 @@ namespace Messager_Project.Repository.UsersFriends
                 user2.Frinds_With_User.Add(relation);
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false; //#Zmień na obiekt
+                return new ResponseModel<UserFriends> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation };
+
             }
 
-            return true;
+            return new ResponseModel<UserFriends> { Status = true, Message = "Relation save successfully", ReferenceObject = null };
         }
 
-        public async Task<bool> DeleteRelationAsync(int id, User user1, User user2)
+        public async Task<ResponseModel<UserFriends>> DeleteRelationAsync(int id, User user1, User user2)
         {
             var relation = await GetRelationIdAsync(id);
 
 
             if (relation == null)
-                return true;
+                return new ResponseModel<UserFriends> { Status = true, Message = "Relation delete successfully", ReferenceObject = null };
 
             user1.User_Friends.Remove(relation);
             user2.Frinds_With_User.Remove(relation);
@@ -98,12 +104,12 @@ namespace Messager_Project.Repository.UsersFriends
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return new ResponseModel<UserFriends> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation };
             }
 
-            return true;
+            return new ResponseModel<UserFriends> { Status = true, Message = "Relation delete successfully", ReferenceObject = null };
 
         }
 

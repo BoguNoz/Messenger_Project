@@ -1,6 +1,7 @@
 ﻿using Messager_Project.Model;
 using Messager_Project.Model.Enteties;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,30 @@ namespace Messager_Project.Repository.Messages
             return messages;
         }
 
+        public async Task<List<Message>?> GetAllMessageSendToByIdAsync(int SenderId, int ReciverId)
+        {
+            var senderMessages = await GetSenderByIdAsync(SenderId);
+            if (senderMessages == null)
+                return (List<Message>?)Enumerable.Empty<Message>();
+
+            var mesages = senderMessages.Where(id => id.Reciver_ID == ReciverId).ToList();
+
+            return mesages;
+
+        }
+
+        public async Task<List<Message>?> GetAllMessageRecivedFromByIdAsync(int ReciverId, int SenderId)
+        {
+            var reciverMessages = await GetReciverByIdAsync(ReciverId);
+            if (reciverMessages == null)
+                return (List<Message>?)Enumerable.Empty<Message>();
+
+            var mesages = reciverMessages.Where(id => id.Sender_ID == SenderId).ToList();
+
+            return mesages;
+
+        }
+
         public async Task<List<Message>?> GetAllMessagesAsync()
         {
             var messages = await DbContext._messages.ToListAsync();
@@ -43,10 +68,10 @@ namespace Messager_Project.Repository.Messages
             return messages;
         }
 
-        public async Task<bool> SaveRelationAsync(Message relation)
+        public async Task<ResponseModel<Message>> SaveRelationAsync(Message relation)
         {
             if (relation == null)
-                return false;
+                return new ResponseModel<Message> { Status = false, Message = "Relation is null", ReferenceObject = relation };
 
             //Checking status
             DbContext.Entry(relation).State = relation.Message_ID == default(int) ? EntityState.Added : EntityState.Modified;
@@ -55,21 +80,21 @@ namespace Messager_Project.Repository.Messages
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false; //#Zmień na obiekt
+                return new ResponseModel<Message> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation };
             }
 
-            return true;
+            return new ResponseModel<Message> { Status = true, Message = "Message saved successfully", ReferenceObject = relation };
         }
 
-        public async Task<bool> DeleteRelationAsync(int id)
+        public async Task<ResponseModel<Message>> DeleteRelationAsync(int id)
         {
             var relation = await GetMessageByIdAsync(id);
 
 
             if (relation == null)
-                return true;
+                return new ResponseModel<Message> { Status = true, Message = "Message deleted successfully", ReferenceObject = relation };
 
             DbContext._messages.Remove(relation);
 
@@ -77,12 +102,12 @@ namespace Messager_Project.Repository.Messages
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return new ResponseModel<Message> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation }; 
             }
 
-            return true;
+            return new ResponseModel<Message> { Status = true, Message = "Message deleted successfully", ReferenceObject = relation };
         }
     }
 }

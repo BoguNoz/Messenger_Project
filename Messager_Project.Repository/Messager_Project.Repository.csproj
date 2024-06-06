@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Messager_Project.Model\Messager_Project.Model.csproj" />
+    <ProjectReference Include="..\ResponseModelService\ResponseModelService.csproj" />
   </ItemGroup>
 
 </Project>

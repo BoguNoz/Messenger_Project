@@ -1,4 +1,5 @@
 ﻿using Messager_Project.Model.Enteties;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,14 @@ namespace Messager_Project.Repository.Messages
 
         Task<List<Message>?> GetSenderByIdAsync(int SenderId);
 
+        Task<List<Message>?> GetAllMessageSendToByIdAsync(int SenderId, int ReciverId);
+
+        Task<List<Message>?> GetAllMessageRecivedFromByIdAsync(int ReciverId, int SenderId);
+
         Task<List<Message>?> GetAllMessagesAsync();
 
-        Task<bool> SaveRelationAsync(Message relation);
+        Task<ResponseModel<Message>> SaveRelationAsync(Message relation);
 
-        Task<bool> DeleteRelationAsync(int id); //#Zmienić boola na obiekt zwracający stan wykonania
+        Task<ResponseModel<Message>> DeleteRelationAsync(int id); 
     }
 }

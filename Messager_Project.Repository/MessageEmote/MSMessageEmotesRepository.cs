@@ -2,6 +2,7 @@
 using Messager_Project.Model.Enteties;
 using Messager_Project.Repository.UsersFriends;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,10 +39,14 @@ namespace Messager_Project.Repository.MessageEmote
             return relations;
         }
 
-        public async Task<bool> SaveRelationshipAsync(MessageEmotes relation, Emotes emote, Message message)
+        public async Task<ResponseModel<MessageEmotes>> SaveRelationshipAsync(MessageEmotes relation, Emotes emote, Message message)
         {
-            if (relation == null || emote == null || message == null)
-                return false;
+            if (relation == null)
+                return new ResponseModel<MessageEmotes> { Status = false, Message = "Relation is null", ReferenceObject = null }; 
+            if (emote == null)
+                return new ResponseModel<MessageEmotes> { Status = false, Message = "Emote is null", ReferenceObject = null };
+            if (message == null)
+                return new ResponseModel<MessageEmotes> { Status = false, Message = "Message is null", ReferenceObject = null };
 
             //Checking status
             DbContext.Entry(relation).State = relation.Relation_ID == default(int) ? EntityState.Added : EntityState.Modified;
@@ -52,21 +57,21 @@ namespace Messager_Project.Repository.MessageEmote
                 message.Emotes.Add(relation);
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false; //#Zmień na obiekt
+                return new ResponseModel<MessageEmotes> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation }; 
             }
 
-            return true;
+            return new ResponseModel<MessageEmotes> { Status = true, Message = "Relation saved sucesfully", ReferenceObject = relation };
         }
 
-        public async Task<bool> DeleteRelationshipAsync(int id, Emotes emote, Message message)
+        public async Task<ResponseModel<MessageEmotes>> DeleteRelationshipAsync(int id, Emotes emote, Message message)
         {
             var relation = await GetMessageEmotesByIdAsync(id);
 
 
             if (relation == null)
-                return true;
+                return new ResponseModel<MessageEmotes> { Status = true, Message = "Relation delete sucesfully", ReferenceObject = null };
 
             emote.Message_Emotes.Remove(relation);
             message.Emotes.Remove(relation);
@@ -76,12 +81,12 @@ namespace Messager_Project.Repository.MessageEmote
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return new ResponseModel<MessageEmotes> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = relation };
             }
 
-            return true;
+            return new ResponseModel<MessageEmotes> { Status = true, Message = "Relation delete sucesfully", ReferenceObject = null };
         }
     }
 }

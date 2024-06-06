@@ -1530,6 +1530,16 @@
         "runtime": {
           "bin/placeholder/PasswordEncryptionService.dll": {}
         }
+      },
+      "ResponseModelService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ResponseModelService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ResponseModelService.dll": {}
+        }
       }
     }
   },
@@ -4134,13 +4144,19 @@
       "type": "project",
       "path": "../PasswordEncryptionService/PasswordEncryptionService.csproj",
       "msbuildProject": "../PasswordEncryptionService/PasswordEncryptionService.csproj"
+    },
+    "ResponseModelService/1.0.0": {
+      "type": "project",
+      "path": "../ResponseModelService/ResponseModelService.csproj",
+      "msbuildProject": "../ResponseModelService/ResponseModelService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Messager_Project.Model >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
-      "Microsoft.EntityFrameworkCore.Tools >= 8.0.6"
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
+      "ResponseModelService >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4178,6 +4194,9 @@
           "projectReferences": {
             "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.Model\\Messager_Project.Model.csproj": {
               "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.Model\\Messager_Project.Model.csproj"
+            },
+            "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj": {
+              "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj"
             }
           }
         }

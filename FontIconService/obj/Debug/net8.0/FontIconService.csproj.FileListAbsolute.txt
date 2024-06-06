@@ -9,3 +9,15 @@ C:\Users\bnozd\Desktop\Messager_Project\FontIconService\obj\Debug\net8.0\FontIco
 C:\Users\bnozd\Desktop\Messager_Project\FontIconService\obj\Debug\net8.0\refint\FontIconService.dll
 C:\Users\bnozd\Desktop\Messager_Project\FontIconService\obj\Debug\net8.0\FontIconService.pdb
 C:\Users\bnozd\Desktop\Messager_Project\FontIconService\obj\Debug\net8.0\ref\FontIconService.dll
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\bin\Debug\net8.0\FontIconService.deps.json
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\bin\Debug\net8.0\FontIconService.dll
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\bin\Debug\net8.0\FontIconService.pdb
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.AssemblyInfoInputs.cache
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.AssemblyInfo.cs
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.csproj.CoreCompileInputs.cache
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.sourcelink.json
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.dll
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\refint\FontIconService.dll
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\FontIconService.pdb
+C:\Users\bnozd\Desktop\Messenger_Project\FontIconService\obj\Debug\net8.0\ref\FontIconService.dll

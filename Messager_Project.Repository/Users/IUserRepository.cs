@@ -1,6 +1,7 @@
 ﻿using Messager_Project.Model;
 using Messager_Project.Model.Enteties;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,13 @@ namespace Messager_Project.Repository.Users
     {
         Task<User?> GetUserByIdAsync(int id);
 
-        Task<List<User>?> GetUserByNameAsync(string name);
+        Task<User?> GetUserByNameAsync(string name);
 
         Task<List<User>?> GetAllUsersThatAsync();
 
-        Task<bool> SaveUserAsync(User user);
+        Task<ResponseModel<User>> SaveUserAsync(User user);
 
-        Task<bool> DeleteUserAsync(int id);
+        Task<ResponseModel<User>> DeleteUserAsync(int id);
 
     }
 }

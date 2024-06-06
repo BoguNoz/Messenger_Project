@@ -1,4 +1,5 @@
 ﻿using Messager_Project.Model.Enteties;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace Messager_Project.Repository.Emote
 
         Task<List<Emotes>?> GetAllEmotesByIdAsync();
 
-        Task<bool> SaveEmoteAsync(Emotes emote);
+        Task<ResponseModel<Emotes>> SaveEmoteAsync(Emotes emote);
 
-        Task<bool> DeleteEmoteAsync(int id);
+        Task<ResponseModel<Emotes>> DeleteEmoteAsync(int id);
     }
 }

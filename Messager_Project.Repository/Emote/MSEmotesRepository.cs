@@ -2,6 +2,7 @@
 using Messager_Project.Model.Enteties;
 using Messager_Project.Repository.Messages;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,13 +32,13 @@ namespace Messager_Project.Repository.Emote
             return emotes;
         }
 
-        public async Task<bool> SaveEmoteAsync(Emotes emote)
+        public async Task<ResponseModel<Emotes>> SaveEmoteAsync(Emotes emote)
         {
             if(emote == null)
-                return false;
+                return new ResponseModel<Emotes> { Status = false, Message = "Emote is null", ReferenceObject = null };
 
             if(DbContext._emotes.Any(e => e.Emote_Name.Equals(emote.Emote_Name, StringComparison.OrdinalIgnoreCase)))
-                return false;
+                return new ResponseModel<Emotes> { Status = false, Message = "Emote name arledy exist in data base", ReferenceObject = emote }; 
 
             //Checking status
             DbContext.Entry(emote).State = emote.Emote_ID == default(int) ? EntityState.Added : EntityState.Modified;
@@ -46,20 +47,20 @@ namespace Messager_Project.Repository.Emote
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false; //#Zmień na obiekt
+                return new ResponseModel<Emotes> { Status = false, Message = $"Error: {ex.Message}" , ReferenceObject = emote };
             }
 
-            return true;
+            return new ResponseModel<Emotes> { Status = true, Message = "Emote saved successfully", ReferenceObject = emote };
         }
 
-        public async Task<bool> DeleteEmoteAsync(int id)
+        public async Task<ResponseModel<Emotes>> DeleteEmoteAsync(int id)
         {
             var emote = await GetEmotesByIdAsync(id);
 
             if (emote == null)
-                return true;
+                return new ResponseModel<Emotes> { Status = true, Message = "Emote delete successfully", ReferenceObject = null };
 
             DbContext._emotes.Remove(emote); //Hard Removal
 
@@ -67,12 +68,12 @@ namespace Messager_Project.Repository.Emote
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return new ResponseModel<Emotes> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = emote };
             }
 
-            return true;
+            return new ResponseModel<Emotes> { Status = true, Message = "Emote delete successfully", ReferenceObject = emote };
         }
 
     }

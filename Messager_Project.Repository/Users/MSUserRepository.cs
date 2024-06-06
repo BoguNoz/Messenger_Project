@@ -1,6 +1,7 @@
 ﻿using Messager_Project.Model;
 using Messager_Project.Model.Enteties;
 using Microsoft.EntityFrameworkCore;
+using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,9 @@ namespace Messager_Project.Repository.Users
             return user;
         }
 
-        public async Task<List<User>?> GetUserByNameAsync(string name)
+        public async Task<User?> GetUserByNameAsync(string name)
         {
-            var userByUsername = await DbContext._users.Where(u => u.Username.Equals(name)).ToListAsync();
+            var userByUsername = await DbContext._users.SingleOrDefaultAsync(u => u.Username.Equals(name));
 
             return userByUsername;
         }
@@ -41,10 +42,20 @@ namespace Messager_Project.Repository.Users
             return allUsers;
         }
 
-        public async Task<bool> SaveUserAsync(User user)
+        public async Task<ResponseModel<User>> SaveUserAsync(User user)
         {
             if (user == null)
-                return false;
+                return new ResponseModel<User> { Status = false, Message = "User is null", ReferenceObject = null };
+
+
+            //Generation Of Unique User Hash Code 
+            Random rand = new Random();
+            var code = user.User_ID + 1000;
+            user.Username += ("#" + code.ToString());
+
+            if (DbContext._users.Any(un => un.Username == user.Username))
+                return new ResponseModel<User> { Status = false, Message = "User with this username arleady exists", ReferenceObject = user };
+
 
             //Checking status
             DbContext.Entry(user).State = user.User_ID == default(int) ? EntityState.Added : EntityState.Modified;
@@ -53,20 +64,20 @@ namespace Messager_Project.Repository.Users
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false; //#Zmień na obiekt
+                return new ResponseModel<User> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = user };
             }
 
-            return true;
+            return new ResponseModel<User> { Status = true, Message = "User saved successfully", ReferenceObject = user };
         }
 
-        public async Task<bool> DeleteUserAsync(int id)
+        public async Task<ResponseModel<User>> DeleteUserAsync(int id)
         {
             var user = await GetUserByIdAsync(id);
 
             if (user == null)
-                return true;
+                return new ResponseModel<User> { Status = true, Message = "User deleted successfully", ReferenceObject = null };
 
             DbContext._users.Remove(user); //Hard Removal
 
@@ -74,12 +85,12 @@ namespace Messager_Project.Repository.Users
             {
                 await DbContext.SaveChangesAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return false;
+                return new ResponseModel<User> { Status = false, Message = $"Error: {ex.Message}", ReferenceObject = user };
             }
 
-            return true;
+            return new ResponseModel<User> { Status = true, Message = "User deleted successfully", ReferenceObject = user };
         }
     }
 }
