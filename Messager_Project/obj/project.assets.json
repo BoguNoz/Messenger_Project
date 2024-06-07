@@ -1590,6 +1590,19 @@
           }
         }
       },
+      "Messager_Project.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6"
+        },
+        "compile": {
+          "bin/placeholder/Messager_Project.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Messager_Project.DTO.dll": {}
+        }
+      },
       "Messager_Project.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1605,6 +1618,21 @@
           "bin/placeholder/Messager_Project.Model.dll": {}
         }
       },
+      "Messager_Project.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Messager_Project.Model": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6",
+          "ResponseModelService": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Messager_Project.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Messager_Project.Repository.dll": {}
+        }
+      },
       "PasswordEncryptionService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1616,6 +1644,16 @@
         },
         "runtime": {
           "bin/placeholder/PasswordEncryptionService.dll": {}
+        }
+      },
+      "ResponseModelService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ResponseModelService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ResponseModelService.dll": {}
         }
       }
     }
@@ -4541,20 +4579,37 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Messager_Project.DTO/1.0.0": {
+      "type": "project",
+      "path": "../Messager_Project.DTO/Messager_Project.DTO.csproj",
+      "msbuildProject": "../Messager_Project.DTO/Messager_Project.DTO.csproj"
+    },
     "Messager_Project.Model/1.0.0": {
       "type": "project",
       "path": "../Messager_Project.Model/Messager_Project.Model.csproj",
       "msbuildProject": "../Messager_Project.Model/Messager_Project.Model.csproj"
     },
+    "Messager_Project.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Messager_Project.Repository/Messager_Project.Repository.csproj",
+      "msbuildProject": "../Messager_Project.Repository/Messager_Project.Repository.csproj"
+    },
     "PasswordEncryptionService/1.0.0": {
       "type": "project",
       "path": "../PasswordEncryptionService/PasswordEncryptionService.csproj",
       "msbuildProject": "../PasswordEncryptionService/PasswordEncryptionService.csproj"
+    },
+    "ResponseModelService/1.0.0": {
+      "type": "project",
+      "path": "../ResponseModelService/ResponseModelService.csproj",
+      "msbuildProject": "../ResponseModelService/ResponseModelService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Messager_Project.DTO >= 1.0.0",
       "Messager_Project.Model >= 1.0.0",
+      "Messager_Project.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
       "Microsoft.Extensions.ApiDescription.Server >= 6.0.5",
@@ -4568,11 +4623,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project\\Messager_Project.csproj",
+      "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project\\Messager_Project.csproj",
       "projectName": "Messager_Project",
-      "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project\\Messager_Project.csproj",
+      "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project\\Messager_Project.csproj",
       "packagesPath": "C:\\Users\\bnozd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project\\obj\\",
+      "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4594,8 +4649,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.Model\\Messager_Project.Model.csproj": {
-              "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.Model\\Messager_Project.Model.csproj"
+            "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\Messager_Project.DTO.csproj": {
+              "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\Messager_Project.DTO.csproj"
+            },
+            "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.Model\\Messager_Project.Model.csproj": {
+              "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.Model\\Messager_Project.Model.csproj"
+            },
+            "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.Repository\\Messager_Project.Repository.csproj": {
+              "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.Repository\\Messager_Project.Repository.csproj"
             }
           }
         }

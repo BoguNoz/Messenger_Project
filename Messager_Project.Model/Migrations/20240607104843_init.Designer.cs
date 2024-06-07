@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Messager_Project.Model.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240605165108_init")]
+    [Migration("20240607104843_init")]
     partial class init
     {
         /// <inheritdoc />

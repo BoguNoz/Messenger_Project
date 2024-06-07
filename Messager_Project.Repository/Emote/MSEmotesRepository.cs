@@ -37,7 +37,7 @@ namespace Messager_Project.Repository.Emote
             if(emote == null)
                 return new ResponseModel<Emotes> { Status = false, Message = "Emote is null", ReferenceObject = null };
 
-            if(DbContext._emotes.Any(e => e.Emote_Name.Equals(emote.Emote_Name, StringComparison.OrdinalIgnoreCase)))
+            if(DbContext._emotes.Any(e => e.Emote_Name.Equals(emote.Emote_Name)))
                 return new ResponseModel<Emotes> { Status = false, Message = "Emote name arledy exist in data base", ReferenceObject = emote }; 
 
             //Checking status

@@ -32,11 +32,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontIconService", "FontIconService\FontIconService.csproj", "{60958553-169A-4B50-AEC6-839E6706223F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DoUsuniencia", "DoUsuniencia", "{64EB96F3-F450-4909-820F-5B35F031FD0E}"
-	ProjectSection(SolutionItems) = preProject
-		DlaMichala.txt = DlaMichala.txt
-	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseModelService", "ResponseModelService\ResponseModelService.csproj", "{A975A2DC-6DD3-485D-BC95-B7FFFA59D65C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResponseModelService", "ResponseModelService\ResponseModelService.csproj", "{A975A2DC-6DD3-485D-BC95-B7FFFA59D65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

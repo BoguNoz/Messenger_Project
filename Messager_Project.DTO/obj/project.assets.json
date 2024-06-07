@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
+      "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
       "projectName": "Messager_Project.DTO",
-      "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
+      "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
       "packagesPath": "C:\\Users\\bnozd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.DTO\\obj\\",
+      "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

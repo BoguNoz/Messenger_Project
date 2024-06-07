@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Messager_Project.Repository.Emote
 {
-    internal interface IEmotesRepository
+    public interface IEmotesRepository
     {
         Task<Emotes?> GetEmotesByIdAsync(int id);
 

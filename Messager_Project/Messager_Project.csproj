@@ -21,11 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Messager_Project.DTO\Messager_Project.DTO.csproj" />
     <ProjectReference Include="..\Messager_Project.Model\Messager_Project.Model.csproj" />
+    <ProjectReference Include="..\Messager_Project.Repository\Messager_Project.Repository.csproj" />
   </ItemGroup>
 
 </Project>

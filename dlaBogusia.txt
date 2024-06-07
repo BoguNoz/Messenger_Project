@@ -1,0 +1,12 @@
+3:42
+Siedzê nad tym ju¿ sporo godzin, jak siê wyœpiê to dokoñczê.
+Brakuje mi messagesDTO senderId i reciverId - ale to sobie dodam
+
+Warningi:
+IMessages ma z³¹ nazwê - nazywa siê jakoœ IEmotes, ale to nic wa¿nego
+Problemy:
+Puty i POST - emotes
+messages - getMessageById
+Jak zaliczê 8h snu, to dorobiê resztê (zosta³y mi endpointy dla 2 tabeli) + pod³¹czê froncik 
+Pytania: 
+czy dodaæ puty do ka¿dej zmiennej dla wiadomoœci czy wystarczy jeden put aktualizuj¹cy wszystko?
