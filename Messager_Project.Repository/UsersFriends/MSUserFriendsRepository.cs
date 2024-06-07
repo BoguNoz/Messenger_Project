@@ -5,6 +5,7 @@ using ResponseModelService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +15,13 @@ namespace Messager_Project.Repository.UsersFriends
     {
         public MSUserFriendsRepository(AppDbContext dbContext) : base(dbContext)
         {
+        }
+
+        public async Task<UserFriends?> GetRelationIdByUser1User2(int user1Id, int user2Id)
+        {
+            var relation = await DbContext._usersFriends.SingleOrDefaultAsync(u => u.User1_ID == user1Id && u.User2_ID == user2Id);
+
+            return relation;
         }
 
         public async Task<UserFriends?> GetUserFriendByIdAsync(int userId, int userFriendId)

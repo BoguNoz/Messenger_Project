@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Riqx7/4U2N58b68FTS2TjHoOQ4CymJ2Tuzc3KGhnknmKTwIiv1/VtMPdwsOzgWYlUvEH12CLnY9b4p1ig2Iggw==",
+  "dgSpecHash": "DWSNgERzfvcqTsgab/b6vB343PZwq16x4l3uUFZaZzWsGbQB6nFb3b5pcKfRLXiqS68qZ7E371Ymb+ENrHZk5w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
+  "projectFilePath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\Messager_Project.DTO\\Messager_Project.DTO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bnozd\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\bnozd\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

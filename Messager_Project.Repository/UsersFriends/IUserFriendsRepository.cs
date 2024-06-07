@@ -10,6 +10,8 @@ namespace Messager_Project.Repository.UsersFriends
 {
     public interface IMessageEmotesRepository
     {
+        Task<UserFriends?> GetRelationIdByUser1User2(int user1Id, int user2Id);
+
         Task<UserFriends?> GetUserFriendByIdAsync(int userId, int userFriendId);
 
         Task<UserFriends?> GetRelationIdAsync(int id);

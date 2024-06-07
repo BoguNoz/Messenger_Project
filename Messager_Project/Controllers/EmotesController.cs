@@ -120,24 +120,16 @@ namespace Messager_Project.Controllers
             if (!result.Status)
                 throw new Exception("Error saving user to database");
             //
-
             return Ok();
         }
 
         [HttpDelete("id={Emote_Id}")]
         public async Task<IActionResult> RemoveEmote(int Emote_Id)
         {
-            //Nie potrzebne
-            //var emote = await _emotesRepository.GetEmotesByIdAsync(Emote_Id);
-            //if (emote == null)
-            //    return NotFound();
-
             var result = await _emotesRepository.DeleteEmoteAsync(Emote_Id);
-
             //Zmiany -> BoguNoz
             if (!result.Status)
                 throw new Exception("Error saving user to database");
-            //
             return Ok();
         }
     }

@@ -49,8 +49,7 @@ namespace Messager_Project.Repository.Users
 
 
             //Generation Of Unique User Hash Code 
-            Random rand = new Random();
-            var code = user.User_ID + 1000;
+            var code = DbContext._users.Max(u => u.User_ID) + 1000;
             user.Username += ("#" + code.ToString());
 
             if (DbContext._users.Any(un => un.Username == user.Username))

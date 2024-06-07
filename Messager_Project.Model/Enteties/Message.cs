@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Messager_Project.Model.Enteties
@@ -27,7 +28,8 @@ namespace Messager_Project.Model.Enteties
         public int Reciver_ID { get; set; }
         public virtual User Reciver { get; set; }
 
-            //Meny Emotes -> Meny Messages
+        //Meny Emotes -> Meny Messages
+        [JsonIgnore]
         public virtual ICollection<MessageEmotes> Emotes { get; set; }
 
     }

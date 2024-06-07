@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PasswordEncryptionService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+184ee289cccb988f53fba880c22477c01343974a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PasswordEncryptionService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PasswordEncryptionService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

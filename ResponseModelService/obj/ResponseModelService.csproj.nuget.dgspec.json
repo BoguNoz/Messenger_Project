@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\ResponseModelService\\ResponseModelService.csproj": {}
+    "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\ResponseModelService\\ResponseModelService.csproj": {
+    "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\ResponseModelService\\ResponseModelService.csproj",
+        "projectUniqueName": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj",
         "projectName": "ResponseModelService",
-        "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\ResponseModelService\\ResponseModelService.csproj",
+        "projectPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\ResponseModelService.csproj",
         "packagesPath": "C:\\Users\\bnozd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_07_06_202024\\Messenger_Project-work-E\\ResponseModelService\\obj\\",
+        "outputPath": "C:\\Users\\bnozd\\Desktop\\Messenger_Project\\ResponseModelService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Messager_Project.Model.Enteties
@@ -27,7 +28,9 @@ namespace Messager_Project.Model.Enteties
 
         //Relations
             //Meny User -> Many Friends
+        [JsonIgnore]
         public virtual ICollection<UserFriends> User_Friends { get; set; }
+        [JsonIgnore]
         public virtual ICollection<UserFriends> Frinds_With_User { get; set; }
 
             //One User -> Meny Message

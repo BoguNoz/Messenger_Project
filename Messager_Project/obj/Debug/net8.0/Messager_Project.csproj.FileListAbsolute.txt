@@ -855,3 +855,9 @@ C:\Users\bnozd\Desktop\Messenger_07_06_202024\Messenger_Project-work-E\Messager_
 C:\Users\bnozd\Desktop\Messenger_07_06_202024\Messenger_Project-work-E\Messager_Project\obj\Debug\net8.0\Messager_Project.pdb
 C:\Users\bnozd\Desktop\Messenger_07_06_202024\Messenger_Project-work-E\Messager_Project\obj\Debug\net8.0\Messager_Project.genruntimeconfig.cache
 C:\Users\bnozd\Desktop\Messenger_07_06_202024\Messenger_Project-work-E\Messager_Project\obj\Debug\net8.0\ref\Messager_Project.dll
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\Messager_Project.DTO.dll
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\Messager_Project.Repository.dll
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\ResponseModelService.dll
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\Messager_Project.DTO.pdb
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\Messager_Project.Repository.pdb
+C:\Users\bnozd\Desktop\Messenger_Project\Messager_Project\bin\Debug\net8.0\ResponseModelService.pdb

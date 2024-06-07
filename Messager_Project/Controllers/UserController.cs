@@ -2,6 +2,7 @@
 using Messager_Project.Model.Enteties;
 using Messager_Project.Repository.Users;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using PasswordEncryptionService;
 using System.Text;
@@ -13,7 +14,6 @@ namespace Messager_Project.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-
         public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
@@ -64,7 +64,9 @@ namespace Messager_Project.Controllers
                 PasswordHash = password.GenerateSaltedHash(Encoding.UTF8.GetBytes(user.Password), salt),
                 PasswordSalt = salt
             };
-            await _userRepository.SaveUserAsync(newUser);
+            var result = await _userRepository.SaveUserAsync(newUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok(newUser);
         }
 
@@ -86,7 +88,9 @@ namespace Messager_Project.Controllers
             existingUser.PasswordHash = password.GenerateSaltedHash(Encoding.UTF8.GetBytes(user.Password), salt);
             existingUser.PasswordSalt = salt;
             existingUser.User_Picture = user.User_Picture;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result = await _userRepository.SaveUserAsync(existingUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpPut("/updateUserUsername/id={id}")]
@@ -100,7 +104,7 @@ namespace Messager_Project.Controllers
             if (existingUser == null)
                 return NotFound();
             existingUser.Username = user.Username;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result = await _userRepository.SaveUserAsync(existingUser);
             return Ok();
         }
         [HttpPut("/updateUserName/id={id}")]
@@ -114,7 +118,9 @@ namespace Messager_Project.Controllers
             if (existingUser == null)
                 return NotFound();
             existingUser.Name = user.Name;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result = await _userRepository.SaveUserAsync(existingUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpPut("/updateUserSurname/id={id}")]
@@ -128,7 +134,9 @@ namespace Messager_Project.Controllers
             if (existingUser == null)
                 return NotFound();
             existingUser.Surname = user.Surname;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result = await _userRepository.SaveUserAsync(existingUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpPut("/updateUserPassword/id={id}")]
@@ -145,7 +153,9 @@ namespace Messager_Project.Controllers
             var salt = password.GetSalt();
             existingUser.PasswordHash = password.GenerateSaltedHash(Encoding.UTF8.GetBytes(user.Password), salt);
             existingUser.PasswordSalt = salt;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result = await _userRepository.SaveUserAsync(existingUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpPut("/updateUserPicture/id={id}")]
@@ -159,7 +169,9 @@ namespace Messager_Project.Controllers
             if (existingUser == null)
                 return NotFound();
             existingUser.User_Picture = user.User_Picture;
-            await _userRepository.SaveUserAsync(existingUser);
+            var result=await _userRepository.SaveUserAsync(existingUser);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpDelete("/deleteUser/id={id}")]
@@ -168,7 +180,9 @@ namespace Messager_Project.Controllers
             var existingUser = await _userRepository.GetUserByIdAsync(id);
             if (existingUser == null)
                 return NotFound();
-           await _userRepository.DeleteUserAsync(id);
+           var result = await _userRepository.DeleteUserAsync(id);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
     }

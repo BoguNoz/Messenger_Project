@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Messager_Project.Model.Enteties
@@ -20,7 +21,8 @@ namespace Messager_Project.Model.Enteties
 
 
         //Relations
-            //Meny Emotes -> Meny Messages
+        //Meny Emotes -> Meny Messages
+        [JsonIgnore]
         public virtual ICollection<MessageEmotes> Message_Emotes { get; set; }
     }
 }

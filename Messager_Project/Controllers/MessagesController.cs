@@ -56,7 +56,7 @@ namespace Messager_Project.Controllers
             }
             return Ok(message);
         }
-        //do poprawy
+
         [HttpPost("/addMessage/creatorId={creatorId}reciverId={reciverId}")]
         public async Task<IActionResult> Post(int creatorId, int reciverId, [FromBody] MessageDto messageDto)
         {
@@ -67,17 +67,21 @@ namespace Messager_Project.Controllers
                 Sender_ID = creatorId,
                 Reciver_ID = reciverId
             };
-            await _messegersRespository.SaveRelationAsync(message);
+            var result = await _messegersRespository.SaveRelationAsync(message);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
-        [HttpPut("changeMessage/id={Emote_Id}")]
-        public async Task<IActionResult> ChangeMessage(int Emote_Id, [FromBody] MessageDto messageDto)
+        [HttpPut("changeMessageContent/id={Id}")]
+        public async Task<IActionResult> ChangeMessageContent(int Id, [FromBody] MessageDto messageDto)
         {
-            var message = await _messegersRespository.GetMessageByIdAsync(Emote_Id);
+            var message = await _messegersRespository.GetMessageByIdAsync(Id);
             if (message == null)
                 return BadRequest();
-            //message.Sender = messageDto.;
-
+            message.Message_Content = messageDto.Message_Content;
+            var result = await _messegersRespository.SaveRelationAsync(message);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
         [HttpDelete("/deleteMessage/id={id}")]
@@ -86,7 +90,9 @@ namespace Messager_Project.Controllers
             var message = await _messegersRespository.GetMessageByIdAsync(id);
             if (message == null)
                 return NotFound();
-            await _messegersRespository.DeleteRelationAsync(id);
+            var result = await _messegersRespository.DeleteRelationAsync(id);
+            if (!result.Status)
+                throw new Exception("Error saving user to database");
             return Ok();
         }
     }
