@@ -1,0 +1,21 @@
+Pytania: 
+czy dodać puty do każdej zmiennej dla wiadomości czy wystarczy jeden put aktualizujący wszystko?
+	-> Dodaj puty zmieniający tylko conntent, dla przykładu:
+		Wiadomość orginalna: Welo
+		Wiadomość poprawiona Hello
+
+O wprowadzonych zmianach:
+Emotki:
+	- GET /api/Emotes/{ Emote_Id } = ok
+	- GET /api/Emotes = ok
+	- PUT /api/Emotes/changeEmote/id={ Emote_Id }
+	- PUT - reszta = ok
+	- POST /addEmote = Błąd naprawiony, był po mojej stronie
+	- DELETE /api/Emotes/od={ Emote_Id } -> dokonałem zmiany
+
+Dokonałem zmian w emotesControlel dokonaj podobnych zmian w reszcie kontrolerów. Nistety kotrolery nie były zabezpieczone co mogło porowadzić do dalszych problemów więć doałem:
+	  //Zmiany -> BoguNoz
+		var result = await _emotesRepository.SaveEmoteAsync(emote);
+  		if (!result.Status)
+      			throw new Exception("Error saving user to database");
+  	//
