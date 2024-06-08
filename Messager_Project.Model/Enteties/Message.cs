@@ -23,9 +23,11 @@ namespace Messager_Project.Model.Enteties
         //Relations
             //One User -> Meny Message
         public int Sender_ID { get; set; }
+        [JsonIgnore]
         public virtual User Sender { get; set; }
 
         public int Reciver_ID { get; set; }
+        [JsonIgnore]
         public virtual User Reciver { get; set; }
 
         //Meny Emotes -> Meny Messages
