@@ -26,7 +26,7 @@ namespace Messager_Project.Repository.UsersFriends
 
         public async Task<UserFriends?> GetUserFriendByIdAsync(int userId, int userFriendId)
         {
-            var friend = await DbContext._usersFriends.Where(u => u.User1_ID == userId).SingleOrDefaultAsync(f => f.User2_ID == userFriendId);
+            var friend = await DbContext._usersFriends.OrderBy(d => d.CreationDate).Where(u => u.User1_ID == userId).SingleOrDefaultAsync(f => f.User2_ID == userFriendId);
 
             return friend;
         }

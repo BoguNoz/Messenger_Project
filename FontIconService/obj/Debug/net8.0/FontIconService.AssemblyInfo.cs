@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FontIconService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e2538116e0bc9ad93d253cd438467821655f6b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c27a3375b29d21826131b9901eab8de2978357dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FontIconService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FontIconService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

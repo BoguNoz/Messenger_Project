@@ -25,14 +25,14 @@ namespace Messager_Project.Repository.Messages
 
         public async Task<List<Message>?> GetReciverByIdAsync(int ReciverId)
         {
-            var messages = await DbContext._messages.Where(m => m.Reciver_ID == ReciverId).ToListAsync();
+            var messages = await DbContext._messages.OrderBy(d => d.Message_Creation).Where(m => m.Reciver_ID == ReciverId).ToListAsync();
 
             return messages;
         }
 
         public async Task<List<Message>?> GetSenderByIdAsync(int SenderId)
         {
-            var messages = await DbContext._messages.Where(m => m.Sender_ID == SenderId).ToListAsync();
+            var messages = await DbContext._messages.OrderBy(d => d.Message_Creation).Where(m => m.Sender_ID == SenderId).ToListAsync();
 
             return messages;
         }
@@ -43,7 +43,7 @@ namespace Messager_Project.Repository.Messages
             if (senderMessages == null)
                 return (List<Message>?)Enumerable.Empty<Message>();
 
-            var mesages = senderMessages.Where(id => id.Reciver_ID == ReciverId).ToList();
+            var mesages = senderMessages.OrderBy(d => d.Message_Creation).Where(id => id.Reciver_ID == ReciverId).ToList();
 
             return mesages;
 
@@ -55,7 +55,7 @@ namespace Messager_Project.Repository.Messages
             if (reciverMessages == null)
                 return (List<Message>?)Enumerable.Empty<Message>();
 
-            var mesages = reciverMessages.Where(id => id.Sender_ID == SenderId).ToList();
+            var mesages = reciverMessages.OrderBy(d => d.Message_Creation).Where(id => id.Sender_ID == SenderId).ToList();
 
             return mesages;
 
@@ -63,7 +63,7 @@ namespace Messager_Project.Repository.Messages
 
         public async Task<List<Message>?> GetAllMessagesAsync()
         {
-            var messages = await DbContext._messages.ToListAsync();
+            var messages = await DbContext._messages.OrderBy(d => d.Message_Creation).ToListAsync();
 
             return messages;
         }
