@@ -18,6 +18,10 @@ namespace Messager_Project.Controllers
         {
             _userRepository = userRepository;
         }
+        /// <summary>
+        /// Zwraca uzytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("id={id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -26,6 +30,10 @@ namespace Messager_Project.Controllers
                 return NotFound();
             return Ok(user);
         }
+        /// <summary>
+        /// Zwraca emotkę o podanym pseudonimie
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("name={name}")]
         public async Task<IActionResult> GetByName(string name)
         {
@@ -34,7 +42,10 @@ namespace Messager_Project.Controllers
                 return NotFound();
             return Ok(user);
         }
-
+        /// <summary>
+        /// Zwraca wszystkich użytkowników
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -45,7 +56,10 @@ namespace Messager_Project.Controllers
 
             return Ok(user);
         }
-
+        /// <summary>
+        /// Dodaje nowego użytkownika
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("/addUser")]
         public async Task<IActionResult> Post([FromBody] UserInputDto user)
         {
@@ -69,7 +83,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok(newUser);
         }
-
+        /// <summary>
+        /// Aktualizuje username, imię, nazwisko, hasło oraz awatar użytkowika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("/updateUser/id={id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UserInputDto user)
         {
@@ -93,6 +110,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Aktualizuję username użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("/updateUserUsername/id={id}")]
         public async Task<IActionResult> UpdateUserUsername(int id, [FromBody] UserInputDto user)
         {
@@ -107,6 +128,10 @@ namespace Messager_Project.Controllers
             var result = await _userRepository.SaveUserAsync(existingUser);
             return Ok();
         }
+        /// <summary>
+        /// Zmienia imię użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("/updateUserName/id={id}")]
         public async Task<IActionResult> UpdateUserName(int id, [FromBody] UserInputDto user)
         {
@@ -123,6 +148,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Zmienia nazwisko użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("/updateUserSurname/id={id}")]
         public async Task<IActionResult> UpdateUserSurname(int id, [FromBody] UserInputDto user)
         {
@@ -139,6 +168,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Zmienia hasło użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("/updateUserPassword/id={id}")]
         public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] UserInputDto user)
         {
@@ -158,7 +191,11 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
-        [HttpPut("/updateUserPicture/id={id}")]
+            /// <summary>
+            /// Aktualizuje awatar użytkownika o podanym Id
+            /// </summary>
+            /// <returns></returns>
+            [HttpPut("/updateUserPicture/id={id}")]
         public async Task<IActionResult> UpdateUserPicture(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -174,6 +211,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Usuwa użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("/deleteUser/id={id}")]
         public async Task<IActionResult> Delete(int id)
         {

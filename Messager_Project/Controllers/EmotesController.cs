@@ -13,20 +13,32 @@ namespace Messager_Project.Controllers
         {
             _emotesRepository = emotesRepository;
         }
+        /// <summary>
+        /// Zwraca emotkę o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{Emote_Id}")]
         public async Task<IActionResult> GetEmoteById(int Emote_Id)
         {
             var emote = await _emotesRepository.GetEmotesByIdAsync(Emote_Id);
-            if (emote == null) 
-                return(NotFound());
+            if (emote == null)
+                return (NotFound());
             return Ok(emote);
         }
-        [HttpGet]
+            /// <summary>
+            /// Zwraca wszystkie emotki
+            /// </summary>
+            /// <returns></returns>
+            [HttpGet]
         public async Task<IActionResult> GetAllEmotesById()
         {
             var emotes = await _emotesRepository.GetAllEmotesByIdAsync();
             return Ok(emotes);
         }
+        /// <summary>
+        /// Zmienia nazwę, domyślny kolor oraz unicode emotki o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("changeEmote/id={Emote_Id}")]
         public async Task<IActionResult> ChangeEmote(int Emote_Id, [FromBody] EmotesDto emotesDto)
         {
@@ -46,7 +58,10 @@ namespace Messager_Project.Controllers
             //
             return Ok();
         }
- 
+        /// <summary>
+        /// Zmienia nazwę emotki o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("changeEmoteName/id={Emote_Id}")]
         public async Task<IActionResult> ChangeEmoteName(int Emote_Id, [FromBody] EmotesDto emotesDto)
         {
@@ -62,6 +77,10 @@ namespace Messager_Project.Controllers
             //
             return Ok();
         }
+        /// <summary>
+        /// Zmienia domyślny kolor emotki o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("changeEmoteDefaultColor/id={Emote_Id}")]
         public async Task<IActionResult> ChangeEmoteDefaultColor(int Emote_Id, [FromBody] EmotesDto emotesDto)
         {
@@ -78,7 +97,12 @@ namespace Messager_Project.Controllers
 
             return Ok();
         }
-        [HttpPut("changeEmoteUnicode/id={Emote_Id}")]
+
+            /// <summary>
+            /// Zmienia unicode emotki o podanym Id
+            /// </summary>
+            /// <returns></returns>
+            [HttpPut("changeEmoteUnicode/id={Emote_Id}")]
         public async Task<IActionResult> ChangeEmotenewEmoteUnicode(int Emote_Id, [FromBody] EmotesDto emotesDto)
         {
             var emote = await _emotesRepository.GetEmotesByIdAsync(Emote_Id);
@@ -94,6 +118,10 @@ namespace Messager_Project.Controllers
             //
             return Ok();
         }
+        /// <summary>
+        /// Dodaje nową emotkę
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("/addEmote")]
         public async Task<IActionResult> AddNewEmote([FromBody] EmotesDto emotesDto)
         {
@@ -122,7 +150,10 @@ namespace Messager_Project.Controllers
             //
             return Ok();
         }
-
+        /// <summary>
+        /// Usuwa emotkę o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("id={Emote_Id}")]
         public async Task<IActionResult> RemoveEmote(int Emote_Id)
         {

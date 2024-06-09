@@ -18,7 +18,10 @@ namespace Messager_Project.Controllers
             _usersFriendsRespository = usersFriendsRespository;
             _userRepository = userRepository;
         }
-
+        /// <summary>
+        /// Zwraca znajomych użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("userId={userId}")]
         public async Task<IActionResult> GetUsersFriends(int userId)
         {
@@ -27,7 +30,10 @@ namespace Messager_Project.Controllers
                 return NotFound();
             return Ok(friends);
         }
-
+        /// <summary>
+        /// Dodaje do znajomych użytkownika o id userFriendId użytkownikowi o identyfikatorze userId
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("userId={userId}")]
         public async Task<IActionResult> AddUsersFriend(int userId, int userFriendId)
         {
@@ -45,7 +51,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
-
+        /// <summary>
+        /// Usuwa użytkownika userFirendId ze znajomych użytkownika userId
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("userId={userId}userFriendId={userFriendId}")]
         public async Task<IActionResult> DeleteUserFriend(int userId, int userFriendId)
         {

@@ -20,12 +20,20 @@ namespace Messager_Project.Controllers
         {
             _messegersRespository = messegersRespository;
         }
+        /// <summary>
+        /// Zwraca wszystkie wiadomości wysłane przez użytkowników
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var messages = await _messegersRespository.GetAllMessagesAsync();
             return Ok(messages);
         }
+        /// <summary>
+        /// Zwraca wszystkie wiadomości wysłane przez użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("id={Id}")]
         public async Task<IActionResult> GetMessageById(int Id)
         {
@@ -36,6 +44,10 @@ namespace Messager_Project.Controllers
             }
             return Ok(message);
         }
+        /// <summary>
+        /// Zwraca wszystkie wiadomości wysłane przez użytkowika o senderId, do użytkownika o reciverId
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("/getAllMessageRecivedFromById/senderId={senderId}reciverId={reciverId}")]
         public async Task<IActionResult> GetAllMessageRecivedFromById(int reciverId, int senderId)
         {
@@ -46,6 +58,10 @@ namespace Messager_Project.Controllers
             }
             return Ok(message);
         }
+        /// <summary>
+        /// Zwraca wszystkie wiadomości otrzymane przez użytkowika o reciverId, wysłąne przez użytkownika o senderId
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("/getAllMessageSendToByIdAsync/senderId={senderId}reciverId={reciverId}")]
         public async Task<IActionResult> GetAllMessageSendToById(int reciverId, int senderId)
         {
@@ -56,7 +72,10 @@ namespace Messager_Project.Controllers
             }
             return Ok(message);
         }
-
+        /// <summary>
+            /// Dodaje nową wiadomość od użytkownika o creatorId do reciverId o treści Message_Content
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("/addMessage/creatorId={creatorId}reciverId={reciverId}")]
         public async Task<IActionResult> Post(int creatorId, int reciverId, [FromBody] MessageDto messageDto)
         {
@@ -72,6 +91,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Zmienia treść wiadomości o podanym id
+        /// </summary>
+        /// <returns></returns>
         [HttpPut("changeMessageContent/id={Id}")]
         public async Task<IActionResult> ChangeMessageContent(int Id, [FromBody] MessageDto messageDto)
         {
@@ -84,6 +107,10 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
+        /// <summary>
+        /// Usuwa wiadomość o podanym Id
+        /// </summary>
+        /// <returns></returns>
         [HttpDelete("/deleteMessage/id={id}")]
         public async Task<IActionResult> Delete(int id)
         {

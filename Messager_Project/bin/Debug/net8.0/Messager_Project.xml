@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Messager_Project</name>
+    </assembly>
+    <members>
+        <member name="M:Messager_Project.Controllers.EmotesController.GetEmoteById(System.Int32)">
+            <summary>
+            Zwraca emotkę o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.GetAllEmotesById">
+            <summary>
+            Zwraca wszystkie emotki
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.ChangeEmote(System.Int32,Messager_Project.DTO.Emotes.EmotesDto)">
+            <summary>
+            Zmienia nazwę, domyślny kolor oraz unicode emotki o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.ChangeEmoteName(System.Int32,Messager_Project.DTO.Emotes.EmotesDto)">
+            <summary>
+            Zmienia nazwę emotki o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.ChangeEmoteDefaultColor(System.Int32,Messager_Project.DTO.Emotes.EmotesDto)">
+            <summary>
+            Zmienia domyślny kolor emotki o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.ChangeEmotenewEmoteUnicode(System.Int32,Messager_Project.DTO.Emotes.EmotesDto)">
+            <summary>
+            Zmienia unicode emotki o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.AddNewEmote(Messager_Project.DTO.Emotes.EmotesDto)">
+            <summary>
+            Dodaje nową emotkę
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.EmotesController.RemoveEmote(System.Int32)">
+            <summary>
+            Usuwa emotkę o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessageEmotesController.GetMessageEmotes">
+            <summary>
+            Zwraca wszystkie emotki przypisane do wszystkich wiadomości
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessageEmotesController.GetMessageEmotesById(System.Int32)">
+            <summary>
+            Zwraca wszystkie emotki przypisane do wiadomości o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessageEmotesController.AddMessageEmotes(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Dodaje emotkę do wiadomości
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessageEmotesController.DeleteMessageEmote(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Usuwa emotkę z wiadomości
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.GetAll">
+            <summary>
+            Zwraca wszystkie wiadomości wysłane przez użytkowników
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.GetMessageById(System.Int32)">
+            <summary>
+            Zwraca wszystkie wiadomości wysłane przez użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.GetAllMessageRecivedFromById(System.Int32,System.Int32)">
+            <summary>
+            Zwraca wszystkie wiadomości wysłane przez użytkowika o senderId, do użytkownika o reciverId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.GetAllMessageSendToById(System.Int32,System.Int32)">
+            <summary>
+            Zwraca wszystkie wiadomości otrzymane przez użytkowika o reciverId, wysłąne przez użytkownika o senderId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.Post(System.Int32,System.Int32,Messager_Project.DTO.Message.MessageDto)">
+            <summary>
+            Dodaje nową wiadomość od użytkownika o creatorId do reciverId o treści Message_Content
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.ChangeMessageContent(System.Int32,Messager_Project.DTO.Message.MessageDto)">
+            <summary>
+            Zmienia treść wiadomości o podanym id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.MessagesController.Delete(System.Int32)">
+            <summary>
+            Usuwa wiadomość o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.GetById(System.Int32)">
+            <summary>
+            Zwraca uzytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.GetByName(System.String)">
+            <summary>
+            Zwraca emotkę o podanym pseudonimie
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.GetAll">
+            <summary>
+            Zwraca wszystkich użytkowników
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.Post(Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Dodaje nowego użytkownika
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUser(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Aktualizuje username, imię, nazwisko, hasło oraz awatar użytkowika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUserUsername(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Aktualizuję username użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUserName(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Zmienia imię użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUserSurname(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Zmienia nazwisko użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUserPassword(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Zmienia hasło użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.UpdateUserPicture(System.Int32,Messager_Project.DTO.User.UserInputDto)">
+            <summary>
+            Aktualizuje awatar użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Usuwa użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UsersFriendsController.GetUsersFriends(System.Int32)">
+            <summary>
+            Zwraca znajomych użytkownika o podanym Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UsersFriendsController.AddUsersFriend(System.Int32,System.Int32)">
+            <summary>
+            Dodaje do znajomych użytkownika o id userFriendId użytkownikowi o identyfikatorze userId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Messager_Project.Controllers.UsersFriendsController.DeleteUserFriend(System.Int32,System.Int32)">
+            <summary>
+            Usuwa użytkownika userFirendId ze znajomych użytkownika userId
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
