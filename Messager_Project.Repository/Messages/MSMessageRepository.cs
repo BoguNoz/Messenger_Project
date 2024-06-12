@@ -75,9 +75,12 @@ namespace Messager_Project.Repository.Messages
 
             //Checking status
             DbContext.Entry(relation).State = relation.Message_ID == default(int) ? EntityState.Added : EntityState.Modified;
+            //var reciver = await DbContext._users.SingleOrDefaultAsync(r => r.User_ID == relation.Reciver_ID);
+            //var sendrer = await DbContext._users.SingleOrDefaultAsync(s => s.User_ID == relation.Sender_ID);
 
             try
             {
+
                 await DbContext.SaveChangesAsync();
             }
             catch (Exception ex)

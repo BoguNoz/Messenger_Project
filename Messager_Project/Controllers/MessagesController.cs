@@ -24,6 +24,7 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkie wiadomości wysłane przez użytkowników
         /// </summary>
         /// <returns></returns>
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -34,7 +35,8 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkie wiadomości wysłane przez użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("id={Id}")]
+
+        [HttpGet("{Id}")]
         public async Task<IActionResult> GetMessageById(int Id)
         {
             var message = await _messegersRespository.GetMessageByIdAsync(Id);
@@ -48,7 +50,8 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkie wiadomości wysłane przez użytkowika o senderId, do użytkownika o reciverId
         /// </summary>
         /// <returns></returns>
-        [HttpGet("/getAllMessageRecivedFromById/senderId={senderId}reciverId={reciverId}")]
+
+        [HttpGet("{senderId}/{reciverId}/received")]
         public async Task<IActionResult> GetAllMessageRecivedFromById(int reciverId, int senderId)
         {
             var message = await _messegersRespository.GetAllMessageRecivedFromByIdAsync(reciverId, senderId);
@@ -62,7 +65,8 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkie wiadomości otrzymane przez użytkowika o reciverId, wysłąne przez użytkownika o senderId
         /// </summary>
         /// <returns></returns>
-        [HttpGet("/getAllMessageSendToByIdAsync/senderId={senderId}reciverId={reciverId}")]
+        
+        [HttpGet("{senderId}/{reciverId}/sent")]
         public async Task<IActionResult> GetAllMessageSendToById(int reciverId, int senderId)
         {
             var message = await _messegersRespository.GetAllMessageSendToByIdAsync(reciverId, senderId);
@@ -73,10 +77,11 @@ namespace Messager_Project.Controllers
             return Ok(message);
         }
         /// <summary>
-            /// Dodaje nową wiadomość od użytkownika o creatorId do reciverId o treści Message_Content
+        /// Dodaje nową wiadomość od użytkownika o creatorId do reciverId o treści Message_Content
         /// </summary>
         /// <returns></returns>
-        [HttpPost("/addMessage/creatorId={creatorId}reciverId={reciverId}")]
+        
+        [HttpPost("{creatorId}/{reciverId}")]
         public async Task<IActionResult> Post(int creatorId, int reciverId, [FromBody] MessageDto messageDto)
         {
             var message = new Message
@@ -95,7 +100,8 @@ namespace Messager_Project.Controllers
         /// Zmienia treść wiadomości o podanym id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("changeMessageContent/id={Id}")]
+        
+        [HttpPut("{Id}/content")]
         public async Task<IActionResult> ChangeMessageContent(int Id, [FromBody] MessageDto messageDto)
         {
             var message = await _messegersRespository.GetMessageByIdAsync(Id);
@@ -111,7 +117,8 @@ namespace Messager_Project.Controllers
         /// Usuwa wiadomość o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpDelete("/deleteMessage/id={id}")]
+
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var message = await _messegersRespository.GetMessageByIdAsync(id);

@@ -22,7 +22,8 @@ namespace Messager_Project.Controllers
         /// Zwraca uzytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("id={id}")]
+        
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var user = await _userRepository.GetUserByIdAsync(id);
@@ -34,7 +35,8 @@ namespace Messager_Project.Controllers
         /// Zwraca emotkę o podanym pseudonimie
         /// </summary>
         /// <returns></returns>
-        [HttpGet("name={name}")]
+        
+        [HttpGet("name/{name}")]
         public async Task<IActionResult> GetByName(string name)
         {
             var user = await _userRepository.GetUserByNameAsync(name);
@@ -46,6 +48,7 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkich użytkowników
         /// </summary>
         /// <returns></returns>
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -60,7 +63,8 @@ namespace Messager_Project.Controllers
         /// Dodaje nowego użytkownika
         /// </summary>
         /// <returns></returns>
-        [HttpPost("/addUser")]
+
+        [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserInputDto user)
         {
             if (user == null)
@@ -87,7 +91,8 @@ namespace Messager_Project.Controllers
         /// Aktualizuje username, imię, nazwisko, hasło oraz awatar użytkowika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("/updateUser/id={id}")]
+
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -114,7 +119,8 @@ namespace Messager_Project.Controllers
         /// Aktualizuję username użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("/updateUserUsername/id={id}")]
+
+        [HttpPut("{id}/username")]
         public async Task<IActionResult> UpdateUserUsername(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -132,7 +138,8 @@ namespace Messager_Project.Controllers
         /// Zmienia imię użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("/updateUserName/id={id}")]
+
+        [HttpPut("{id}/name")]
         public async Task<IActionResult> UpdateUserName(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -152,7 +159,8 @@ namespace Messager_Project.Controllers
         /// Zmienia nazwisko użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("/updateUserSurname/id={id}")]
+
+        [HttpPut("{id}/surname")]
         public async Task<IActionResult> UpdateUserSurname(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -172,7 +180,8 @@ namespace Messager_Project.Controllers
         /// Zmienia hasło użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpPut("/updateUserPassword/id={id}")]
+
+        [HttpPut("{id}/password")]
         public async Task<IActionResult> UpdateUserPassword(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -191,11 +200,12 @@ namespace Messager_Project.Controllers
                 throw new Exception("Error saving user to database");
             return Ok();
         }
-            /// <summary>
-            /// Aktualizuje awatar użytkownika o podanym Id
-            /// </summary>
-            /// <returns></returns>
-            [HttpPut("/updateUserPicture/id={id}")]
+        /// <summary>
+        /// Aktualizuje awatar użytkownika o podanym Id
+        /// </summary>
+        /// <returns></returns>
+        
+        [HttpPut("{id}/picture")]
         public async Task<IActionResult> UpdateUserPicture(int id, [FromBody] UserInputDto user)
         {
             if (user == null)
@@ -215,7 +225,8 @@ namespace Messager_Project.Controllers
         /// Usuwa użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpDelete("/deleteUser/id={id}")]
+
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var existingUser = await _userRepository.GetUserByIdAsync(id);

@@ -22,7 +22,8 @@ namespace Messager_Project.Controllers
         /// Zwraca znajomych użytkownika o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("userId={userId}")]
+
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetUsersFriends(int userId)
         {
             var friends = await _usersFriendsRespository.GetAllUsersFriendsAsync(userId);
@@ -34,7 +35,8 @@ namespace Messager_Project.Controllers
         /// Dodaje do znajomych użytkownika o id userFriendId użytkownikowi o identyfikatorze userId
         /// </summary>
         /// <returns></returns>
-        [HttpPost("userId={userId}")]
+
+        [HttpPost("{userId}/{userFriendId}")]
         public async Task<IActionResult> AddUsersFriend(int userId, int userFriendId)
         {
             var user1 = await _userRepository.GetUserByIdAsync(userId);
@@ -55,7 +57,8 @@ namespace Messager_Project.Controllers
         /// Usuwa użytkownika userFirendId ze znajomych użytkownika userId
         /// </summary>
         /// <returns></returns>
-        [HttpDelete("userId={userId}userFriendId={userFriendId}")]
+
+        [HttpDelete("{userId}/{userFriendId}")]
         public async Task<IActionResult> DeleteUserFriend(int userId, int userFriendId)
         {
             var user1 = await _userRepository.GetUserByIdAsync(userId);

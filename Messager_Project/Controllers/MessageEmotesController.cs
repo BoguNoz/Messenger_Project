@@ -35,7 +35,8 @@ namespace Messager_Project.Controllers
         /// Zwraca wszystkie emotki przypisane do wiadomości o podanym Id
         /// </summary>
         /// <returns></returns>
-        [HttpGet("id={Id}")]
+
+        [HttpGet("{Id}")]
         public async Task<IActionResult> GetMessageEmotesById(int Id)
         {
             var messagesEmotes = await _messageEmoteRepository.GetMessageEmotesByIdAsync(Id);
@@ -45,7 +46,8 @@ namespace Messager_Project.Controllers
         /// Dodaje emotkę do wiadomości
         /// </summary>
         /// <returns></returns>
-        [HttpPost("/addMessageEmotes/relationid={relationId}messageId={messageId}emoteId={emoteId}")]
+
+        [HttpPost("{relationId}/{messageId}/{emoteId}")]
         public async Task<IActionResult> AddMessageEmotes(int relationId, int messageId, int emoteId)
         {
             var message = await _messagesRespository.GetMessageByIdAsync(messageId);
@@ -64,7 +66,8 @@ namespace Messager_Project.Controllers
         /// Usuwa emotkę z wiadomości
         /// </summary>
         /// <returns></returns>
-        [HttpDelete("relationid={relationId}messageId={messageId}emoteId={emoteId}")]
+
+        [HttpDelete("{relationId}/{messageId}/{emoteId}")]
         public async Task<IActionResult> DeleteMessageEmote(int relationId, int messageId, int emoteId)
         {
             var message = await _messagesRespository.GetMessageByIdAsync(messageId);
