@@ -1,5 +1,7 @@
 # Messenger Project
 
+ASP .Net Core project showcasing backend with full swagger documentation 
+
 ## A fully functional example project written in C# (ASP .NET Core) showcasing the backend for a simple web communicator
 
 This project is example of how backend (REST API) for a simple communicator like a messenger could look like. It contains following:
