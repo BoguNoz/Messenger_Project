@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RavenDB.Client" Version="7.1.0-rc-71000" />
+  </ItemGroup>
+
 </Project>

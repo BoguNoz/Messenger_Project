@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "oCoO8kPbfmQ=",
+  "success": true,
+  "projectFilePath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Repositories/Repositories.csproj",
+  "expectedPackageFiles": [
+    "/Users/bnozdryn/.nuget/packages/lambda2js.signed/3.1.4/lambda2js.signed.3.1.4.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.aspnetcore.jsonpatch/8.0.16/microsoft.aspnetcore.jsonpatch.8.0.16.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.extensions.configuration/10.0.0-preview.5.25277.114/microsoft.extensions.configuration.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0-preview.5.25277.114/microsoft.extensions.configuration.abstractions.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.extensions.primitives/10.0.0-preview.5.25277.114/microsoft.extensions.primitives.10.0.0-preview.5.25277.114.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/microsoft.io.recyclablememorystream/3.0.1/microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/nito.asyncex.coordination/5.1.2/nito.asyncex.coordination.5.1.2.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/nito.asyncex.tasks/5.1.2/nito.asyncex.tasks.5.1.2.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/nito.collections.deque/1.1.1/nito.collections.deque.1.1.1.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/nito.disposables/2.2.1/nito.disposables.2.2.1.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/ravendb.client/7.1.0-rc-71000/ravendb.client.7.1.0-rc-71000.nupkg.sha512",
+    "/Users/bnozdryn/.nuget/packages/system.collections.immutable/9.0.5/system.collections.immutable.9.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
