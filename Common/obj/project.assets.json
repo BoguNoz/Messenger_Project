@@ -685,11 +685,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Common/Common.csproj",
+      "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj",
       "projectName": "Common",
-      "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Common/Common.csproj",
+      "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj",
       "packagesPath": "/Users/bnozdryn/.nuget/packages/",
-      "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Common/obj/",
+      "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/bnozdryn/.nuget/NuGet/NuGet.Config"
@@ -704,8 +704,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj": {
-              "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj"
+            "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {
+              "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj"
             }
           }
         }

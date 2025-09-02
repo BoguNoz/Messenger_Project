@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj": {}
+    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {}
   },
   "projects": {
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj": {
+    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj",
+        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj",
         "projectName": "Models",
-        "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/Models.csproj",
+        "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj",
         "packagesPath": "/Users/bnozdryn/.nuget/packages/",
-        "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Models/obj/",
+        "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bnozdryn/.nuget/NuGet/NuGet.Config"

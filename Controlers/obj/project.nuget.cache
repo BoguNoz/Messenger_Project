@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CTWW+OxIjGk=",
+  "dgSpecHash": "oLAnTvdGImA=",
   "success": true,
-  "projectFilePath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Controlers/Controlers.csproj",
+  "projectFilePath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Controlers/Controlers.csproj",
   "expectedPackageFiles": [
     "/Users/bnozdryn/.nuget/packages/lambda2js.signed/3.1.4/lambda2js.signed.3.1.4.nupkg.sha512",
     "/Users/bnozdryn/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.16/microsoft.aspnetcore.authentication.jwtbearer.8.0.16.nupkg.sha512",

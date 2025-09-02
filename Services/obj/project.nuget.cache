@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AqC//yAz6w8=",
+  "dgSpecHash": "fSJwzI/Y+bg=",
   "success": true,
-  "projectFilePath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT_ZALICZENIOWY/Messenger_Project/Services/Services.csproj",
+  "projectFilePath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Services/Services.csproj",
   "expectedPackageFiles": [
     "/Users/bnozdryn/.nuget/packages/lambda2js.signed/3.1.4/lambda2js.signed.3.1.4.nupkg.sha512",
     "/Users/bnozdryn/.nuget/packages/microsoft.aspnetcore.jsonpatch/8.0.16/microsoft.aspnetcore.jsonpatch.8.0.16.nupkg.sha512",
