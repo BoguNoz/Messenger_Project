@@ -10,6 +10,7 @@ using Repositories.MessageRepositories;
 using Repositories.UserRepositories;
 using Services.Authentication;
 using Services.Communication;
+using Services.Storage;
 using Services.Users;
 using IAuthenticationService = Services.Authentication.IAuthenticationService;
 
@@ -45,10 +46,11 @@ builder.Services.AddScoped<IMessageRepository, RavenMessageRepository>();
 builder.Services.AddScoped<IAuthenticationService, JwtAuthenticationService>();
 builder.Services.AddScoped<IUserManagementService, RavenUserManagementService>();
 builder.Services.AddScoped<ICommunicationService, RavenCommunicationService>();
+builder.Services.AddScoped<IBlobStorageService, AzureBlobStorageService>();
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
-builder.Services.AddControllers();
+builder.Services.AddControllersWithViews();
 
 // Swagger configuration
 builder.Services.AddEndpointsApiExplorer();
@@ -83,6 +85,31 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+if (app.Environment.IsDevelopment())
+{
+    // zostawiasz swagger tylko dla dev
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<DbContext>();
+    await dbContext.InitializeIndexesAsync();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();  
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -101,7 +128,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();
 

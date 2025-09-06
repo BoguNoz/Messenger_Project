@@ -12,16 +12,18 @@ public class RavenCommunicationService : ICommunicationService
     private readonly IMessageRepository _messageRepository;
     private readonly IEmoteRepository _emoteRepository;
     private readonly IUserRepository _userRepository;
-    private ICommunicationService _communicationServiceImplementation;
 
-    public RavenCommunicationService(DbContext context, IMessageRepository messageRepository, IEmoteRepository emoteRepository, IUserRepository userRepository)
+    public RavenCommunicationService(
+        DbContext context,
+        IMessageRepository messageRepository,
+        IEmoteRepository emoteRepository,
+        IUserRepository userRepository)
     {
         _context = context;
         _messageRepository = messageRepository;
         _emoteRepository = emoteRepository;
         _userRepository = userRepository;
     }
-
     #endregion Dependencies
     
     public async Task<Response<List<Message>>> GetByConversationAsync(string senderId, string reciverId, int page, int pageSize = 10)

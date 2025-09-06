@@ -10,6 +10,7 @@ public class RavenUserManagementService : IUserManagementService
     #region Dependencies
     private readonly IUserRepository _userRepository;
     private readonly IAuthenticationService _authenticationService;
+
     #endregion Dependencies
 
     public RavenUserManagementService(IUserRepository userRepository, IAuthenticationService authenticationService)
@@ -26,15 +27,17 @@ public class RavenUserManagementService : IUserManagementService
     public async Task<Response<string>> AuthenticateUserAsync(string userEmail, string password)
     {
         var userResponse = await _userRepository.GetByEmailAsync(userEmail);
-        if (!userResponse.Status)
+        var user = userResponse.Object;
+
+        if (user == null || string.IsNullOrEmpty(user.PasswordHash) || string.IsNullOrEmpty(user.PasswordSalt))
         {
-            return new Response<string>()
+            return new Response<string>
             {
                 Status = false,
-                Object = string.Empty, 
+                Object = string.Empty,
+                Message = "Niepoprawny login lub hasło."
             };
         }
-        var user = userResponse.Object;
 
         HashFunction hashFunction = new HashFunction();
         if(!hashFunction.VerifyPassword(password, user.PasswordHash, user.PasswordSalt))
@@ -43,6 +46,7 @@ public class RavenUserManagementService : IUserManagementService
             {
                 Status = false,
                 Object = string.Empty,
+                Message = "Niepoprawny login lub hasło."
             };
         }
 
@@ -60,12 +64,29 @@ public class RavenUserManagementService : IUserManagementService
         return new Response<string>
         {
             Object = authenticationResponse.Object,
+            Status = true
         };
     }
+
 
     public Task<Response<List<User>>> GetUserFriendsAsync(string userId)
     {
         return _userRepository.GetUserFriendsAsync(userId);
+    }
+
+    public async  Task<Response<User>> GetUserByEmail(string email)
+    {
+        var user = await _userRepository.GetByEmailAsync(email);
+        if(!user.Status)
+        {
+            return new Response<User>
+            {
+                Status = false,
+                Object = null,
+            };
+        }
+        
+        return user;
     }
 
     public async Task<Response<User>> RegisterUserAsync(User user)

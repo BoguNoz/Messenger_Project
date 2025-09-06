@@ -81,35 +81,31 @@ public class RavenMessageRepository : RavenBaseRepository, IMessageRepository
         pageSize = Math.Clamp(pageSize, 1, 100);
         
         using var session = await dbContext.OpenAsyncSession();
-        QueryStatistics stats = null;
-        
+
         var query = session.Query<Message, Message_ByUser>()
-            .Statistics(out stats)
-            .Where(m => m.SenderId == userId || m.ReciverId == userId);
+            .Where(m => m.ReciverId == userId);
 
         if (dateFrom.HasValue)
         {
             query = query.Where(m => m.MessageCreation >= dateFrom.Value);
         }
-       
+
         if (dateTo.HasValue)
         {
             query = query.Where(m => m.MessageCreation <= dateTo.Value);
         }
-        
-        query = query
+
+        var messages = await query
             .OrderByDescending(m => m.MessageCreation)
             .Skip((page - 1) * pageSize)
-            .Take(pageSize);
-        
-        var messages = await query.ToListAsync();
+            .Take(pageSize)
+            .ToListAsync();
 
         return new Response<List<Message>>
         {
             Object     = messages,
             PageNumber = page,
             PageSize   = pageSize,
-            TotalCount = stats.TotalResults
         };
     }
     

@@ -85,18 +85,43 @@ namespace Repositories.UserRepositories;
             .Include<User>(u => u.Friends)
             .LoadAsync<User>(id);
 
-        var friendsDict = await session.LoadAsync<User>(user.Friends.ToArray());
-        var friends = user.Friends
-            .Where(id => friendsDict.ContainsKey(id))
-            .Select(id => friendsDict[id])
+        if (user == null)
+        {
+            return new Response<List<User>>
+            {
+                Status = false,
+                Message = "User not found.",
+                Object = new List<User>()
+            };
+        }
+
+        var friendsList = user.Friends ?? new List<string>(); // zabezpieczenie przed null
+
+        if (!friendsList.Any())
+        {
+            return new Response<List<User>>
+            {
+                Status = true,
+                Object = new List<User>(),
+                TotalCount = 0
+            };
+        }
+
+        var friendsDict = await session.LoadAsync<User>(friendsList.ToArray());
+
+        var friends = friendsList
+            .Where(fid => friendsDict.ContainsKey(fid) && friendsDict[fid] != null)
+            .Select(fid => friendsDict[fid])
             .ToList();
 
         return new Response<List<User>>
         {
             Object = friends,
-            TotalCount = friends.Count
+            TotalCount = friends.Count,
+            Status = true
         };
     }
+
 
     public async Task<Response<User>> SaveAsync(User user)
     {

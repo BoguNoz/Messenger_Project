@@ -11,6 +11,7 @@ public class MessageAdapter
         {
             MessageCreation = messageDto.MessageCreation,
             Content = messageDto.Content,
+            AttachmentUrl = messageDto.AttachmentUrl,
             SenderId = messageDto.SenderId,
             ReciverId = messageDto.ReciverId,
             Emotes = messageDto.EmoteIds,
@@ -24,9 +25,11 @@ public class MessageAdapter
         {
             MessageCreation = message.MessageCreation,
             Content = message.Content,
+            AttachmentUrl = message.AttachmentUrl,
             SenderId = message.SenderId,
             ReciverId = message.ReciverId,
-            EmoteIds = message.Emotes.ToList()
+            EmoteIds = message.Emotes?.ToList() ?? new List<string>() 
         });
     }
+
 }

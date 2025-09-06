@@ -1,0 +1,151 @@
+@using Common.DTO.Message
+@model Common.DTO.User.UserResponseDto
+@{
+    ViewData["Title"] = "Użytkownicy";
+    Layout = "_Layout";
+}
+
+<div class="container py-4">
+    <div class="container py-4">
+        <ul class="nav nav-tabs" id="userTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#loginTab">Logowanie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#registerTab">Rejestracja</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+            <!-- Logowanie -->
+            <div class="tab-pane fade show active" id="loginTab" role="tabpanel">
+                @using (Html.BeginForm("Login", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input name="email" type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hasło</label>
+                        <input name="password" type="password" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Zaloguj</button>
+                }
+            </div>
+
+            <!-- Rejestracja -->
+            <div class="tab-pane fade" id="registerTab" role="tabpanel">
+                @using (Html.BeginForm("Register", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label class="form-label">Imię i nazwisko</label>
+                        <input name="Name" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input name="Email" type="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hasło</label>
+                        <input name="Password" type="password" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-success">Zarejestruj</button>
+                }
+            </div>
+        </div>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="mt-2 alert alert-danger">@TempData["Error"]</div>
+        }
+        @if (TempData["Message"] != null)
+        {
+            <div class="mt-2 alert alert-success">@TempData["Message"]</div>
+        }
+    </div>
+
+    <!-- Szybkie wysyłanie wiadomości -->
+    <div class="card p-3 mt-4">
+        <h5>Szybkie wysłanie wiadomości</h5>
+        @using (Html.BeginForm("SendMessages", "Communication", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row g-2 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label">From (email)</label>
+                    <input name="fromEmail" type="email" class="form-control" placeholder="nadawca@email.pl" />
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">To (email)</label>
+                    <input name="toEmail" type="email" class="form-control" placeholder="odbiorca@email.pl" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Treść</label>
+                    <input name="content" type="text" class="form-control" placeholder="Napisz wiadomość..." required />
+                </div>
+                <div class="col-md-1 text-center">
+                    <label class="form-label d-block">&nbsp;</label>
+                    <label class="btn btn-outline-secondary w-100">
+                        <i class="bi bi-pin-fill"></i>
+                        <input type="file" name="attachment" hidden>
+                    </label>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary w-100">Wyślij</button>
+                </div>
+            </div>
+            @if (TempData["Error"] != null)
+            {
+                <div class="mt-2 alert alert-danger">@TempData["Error"]</div>
+            }
+            @if (TempData["Message"] != null)
+            {
+                <div class="mt-2 alert alert-success">@TempData["Message"]</div>
+            }
+        }
+    </div>
+
+    <!-- Skrzynka odbiorcza -->
+    <div class="card p-3 mt-4">
+        <h5>Skrzynka odbiorcza</h5>
+        <div id="inboxMessages" class="border rounded p-2" style="height: 300px; overflow-y: auto; background: #fafafa;">
+            @if (ViewBag.InboxMessages != null && ((List<MessageResponseDto>)ViewBag.InboxMessages).Any())
+            {
+                foreach (var msg in (List<MessageResponseDto>)ViewBag.InboxMessages)
+                {
+                    <div class="mb-2">
+                        <strong>@msg.SenderEmail:</strong> @msg.Content
+                        @if (!string.IsNullOrWhiteSpace(msg.AttachmentUrl))
+                        {
+                            <img src="@msg.AttachmentUrl" style="max-width:192px; padding:8px;" />
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">Brak wiadomości.</p>
+            }
+
+            else
+            {
+                <p class="text-muted">Brak wiadomości.</p>
+            }
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('label.btn input[type="file"]').forEach(input => {
+            input.addEventListener('change', e => {
+                const fileName = e.target.files[0]?.name || '';
+                e.target.closest('label').querySelector('i').textContent = fileName ? '📌' : '';
+            });
+        });
+    </script>
+}

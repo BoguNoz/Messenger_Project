@@ -7,20 +7,23 @@ public class Message_ByUser : AbstractIndexCreationTask<Message>
 {
     public class Result
     {
-        public string UserId { get; set; }
+        public string SenderId { get; set; }
+        public string ReciverId { get; set; }
         public DateTime MessageCreation { get; set; }
     }
 
     public Message_ByUser()
     {
         Map = messages => from m in messages
-            from userId in new[] { m.SenderId, m.ReciverId }
             select new
             {
-                UserId = userId,
-                MessageCreation = m.MessageCreation
+                m.SenderId,
+                m.ReciverId,
+                m.MessageCreation
             };
+
+        Indexes.Add(x => x.SenderId, FieldIndexing.Default);
+        Indexes.Add(x => x.ReciverId, FieldIndexing.Default);
         Indexes.Add(x => x.MessageCreation, FieldIndexing.Default);
-        Indexes.Add(x => x.Id, FieldIndexing.Default);
     }
 }

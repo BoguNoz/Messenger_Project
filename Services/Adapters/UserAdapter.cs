@@ -29,7 +29,7 @@ public class UserAdapter
             Id = user.Id,
             Name = user.Name,
             Email = user.Email,
-            PicturesLinks = user.PicturesLinks.ToList(),
+            PicturesLinks = user.PicturesLinks?.ToList() ?? new List<string>(),
         });
     }
 }

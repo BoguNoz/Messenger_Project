@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Repositories/Repositories.csproj": {}
+    "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Repositories/Repositories.csproj": {}
   },
   "projects": {
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj": {
+    "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj",
+        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/Common.csproj",
         "projectName": "Common",
-        "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj",
+        "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/Common.csproj",
         "packagesPath": "/Users/bnozdryn/.nuget/packages/",
-        "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/obj/",
+        "outputPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bnozdryn/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {
-                "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj"
+              "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj": {
+                "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj"
               }
             }
           }
@@ -47,6 +47,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.25.0-beta.1, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.OpenApi.Configuration.AppSettings": {
+              "target": "Package",
+              "version": "[2.0.0-preview2, )"
+            },
             "RavenDB.Client": {
               "target": "Package",
               "version": "[7.1.0-rc-71000, )"
@@ -72,14 +84,14 @@
         }
       }
     },
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {
+    "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj",
+        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj",
         "projectName": "Models",
-        "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj",
+        "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj",
         "packagesPath": "/Users/bnozdryn/.nuget/packages/",
-        "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/obj/",
+        "outputPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bnozdryn/.nuget/NuGet/NuGet.Config"
@@ -111,6 +123,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.25.0-beta.1, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.OpenApi.Configuration.AppSettings": {
+              "target": "Package",
+              "version": "[2.0.0-preview2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[10.0.0-preview.5.25277.114, )"
@@ -140,14 +164,14 @@
         }
       }
     },
-    "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Repositories/Repositories.csproj": {
+    "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Repositories/Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Repositories/Repositories.csproj",
+        "projectUniqueName": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Repositories/Repositories.csproj",
         "projectName": "Repositories",
-        "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Repositories/Repositories.csproj",
+        "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Repositories/Repositories.csproj",
         "packagesPath": "/Users/bnozdryn/.nuget/packages/",
-        "outputPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Repositories/obj/",
+        "outputPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Repositories/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bnozdryn/.nuget/NuGet/NuGet.Config"
@@ -162,11 +186,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj": {
-                "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Common/Common.csproj"
+              "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/Common.csproj": {
+                "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Common/Common.csproj"
               },
-              "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj": {
-                "projectPath": "/Users/bnozdryn/University/Archives/Azure/AZUR_PROJEKT/Messenger_Project/Models/Models.csproj"
+              "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj": {
+                "projectPath": "/Users/bnozdryn/University/Archives/Azure/Messenger_Project/Models/Models.csproj"
               }
             }
           }
@@ -185,6 +209,28 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.Core": {
+              "target": "Package",
+              "version": "[1.47.3, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.26.0-beta.1, )"
+            },
+            "Azure.Storage.Common": {
+              "target": "Package",
+              "version": "[12.25.0-beta.1, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Azure.WebJobs.Extensions.OpenApi.Configuration.AppSettings": {
+              "target": "Package",
+              "version": "[2.0.0-preview2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

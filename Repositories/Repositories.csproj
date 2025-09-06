@@ -11,4 +11,12 @@
       <ProjectReference Include="..\Models\Models.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Azure.Core" Version="1.47.3" />
+      <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0-beta.1" />
+      <PackageReference Include="Azure.Storage.Common" Version="12.25.0-beta.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+      <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi.Configuration.AppSettings" Version="2.0.0-preview2" />
+    </ItemGroup>
+
 </Project>

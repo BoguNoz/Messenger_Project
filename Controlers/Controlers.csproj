@@ -8,7 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Core" Version="1.47.3" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.26.0-beta.1" />
+    <PackageReference Include="Azure.Storage.Common" Version="12.25.0-beta.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.16" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.OpenApi.Configuration.AppSettings" Version="2.0.0-preview2" />
     <PackageReference Include="RavenDB.Client" Version="7.1.0-rc-71000" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="8.1.4" />
@@ -19,6 +24,13 @@
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Communication\Conversation.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
   </ItemGroup>
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
